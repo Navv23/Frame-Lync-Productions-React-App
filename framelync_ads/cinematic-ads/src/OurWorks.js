@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 
 const OurWorks = () => {
   return (
-    <div className="bg-black text-white min-h-screen pt-40">
+    <div className="bg-[#0E1012] text-white min-h-screen pt-40">
       {/* ✅ Reusable Header */}
       <Header />
 
@@ -19,9 +19,7 @@ const OurWorks = () => {
           <div className="w-1/2">
             <h3 className="font-bold text-lg">Koncept Interiors</h3>
             <p className="text-gray-300 text-sm mt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
             </p>
             <p className="text-gray-400 text-sm mt-2">Project Time: 12 Days</p>
             <Link to="/loading">
@@ -43,7 +41,7 @@ const OurWorks = () => {
           <div className="w-1/2">
             <h3 className="font-bold text-lg">Autana Greens</h3>
             <p className="text-gray-300 text-sm mt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
             </p>
             <p className="text-gray-400 text-sm mt-2">Project Time: 2 Days</p>
             <Link to="/loading">

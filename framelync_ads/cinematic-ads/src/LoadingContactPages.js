@@ -70,30 +70,64 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-gray-200 text-black min-h-screen flex flex-col">
+    <div className="bg-gray-300 text-black min-h-screen flex flex-col">
       {/* ✅ Use dark logo for ContactUs page */}
       <Header logoVariant="dark" />
 
       {/* Contact Form Content */}
       <div className="flex flex-col items-center justify-center flex-grow px-6">
-        <h2 className="text-4xl font-bold mb-10 mt-10">Connect with us</h2>
-        <form className="w-full max-w-md space-y-6" onSubmit={handleSubmit}>
-          <input type="text" placeholder="Name" className="w-full px-4 py-2 border rounded-lg" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-          <input type="email" placeholder="Email" className="w-full px-4 py-2 border rounded-lg" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-          <textarea placeholder="Message" className="w-full px-4 py-2 border rounded-lg" rows="4" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
-          {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
-          <button type="submit" className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800">Submit ↗</button>
-        </form>
+        {/* ✅ Subtle Outline Card (Includes Title) */}
+        <div className="w-full max-w-md border border-gray-600 rounded-xl px-6 py-8 bg-black/4">
+          
+          {/* Title Inside the Card */}
+          <h2 className="text-2xl font-bold text-center mb-6">Connect with Us</h2>
+
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <input 
+              type="text" 
+              placeholder="Name" 
+              className="w-full px-4 py-2 border rounded-full bg-white/90 text-black placeholder-gray-700" 
+              value={formData.name} 
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })} 
+            />
+            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+
+            <input 
+              type="email" 
+              placeholder="Email" 
+              className="w-full px-4 py-2 border rounded-full bg-white/90 text-black placeholder-gray-700" 
+              value={formData.email} 
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })} 
+            />
+            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+
+            <textarea 
+              placeholder="Message" 
+              className="w-full px-4 py-2 border rounded-xl bg-white/90 text-black placeholder-gray-700" 
+              rows="4" 
+              value={formData.message} 
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })} 
+            />
+            {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+
+            {/* ✅ Smaller & Fully Rounded Button */}
+            <button 
+              type="submit" 
+              className="w-full bg-[#0E1012] text-white py-1.5 rounded-full text-sm hover:bg-gray-800 transition">
+              Submit ↗
+            </button>
+          </form>
+        </div>
+      {/* Success Message */}
+      {/* Success Message */}
+        {success && (
+          <div className="fixed bottom-16 right-4 bg-[#0E1012] text-white p-4 rounded-lg shadow-lg animate-fade-in">
+            <p className="font-semibold">Thanks for your response! We’ll get back to you soon. 🚀</p>
+          </div>
+        )}
+
       </div>
 
-      {/* Success Message */}
-      {success && (
-        <div className="fixed bottom-4 right-4 bg-black text-white p-4 rounded-lg shadow-lg">
-          <p>Thanks for the Response, We will get back to you soon!</p>
-        </div>
-      )}
 
       {/* ✅ Reusable Footer */}
       <Footer />

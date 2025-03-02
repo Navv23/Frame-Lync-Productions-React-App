@@ -16,12 +16,12 @@ const TypingEffect = () => {
 
     if (!isDeleting && charIndex < currentWord.length) {
       setTimeout(() => {
-        setText(baseText + currentWord.slice(0, charIndex + 1));
+        setText(currentWord.slice(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
       }, typingSpeed);
     } else if (isDeleting && charIndex > 0) {
       setTimeout(() => {
-        setText(baseText + currentWord.slice(0, charIndex - 1));
+        setText(currentWord.slice(0, charIndex - 1));
         setCharIndex((prev) => prev - 1);
       }, typingSpeed);
     } else if (!isDeleting && charIndex === currentWord.length) {
@@ -43,9 +43,11 @@ const TypingEffect = () => {
 
   return (
     <h1 className="mt-28 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center whitespace-pre-wrap">
-      {text}
-      <span className={`ml-2 font-thin text-white ${cursorVisible ? "opacity-100" : "opacity-0"}`}>|</span>
-
+      {baseText}
+      <span className="text-[#64AFF4]">{text}</span> 
+      <span className={`ml-2 font-thin text-white ${cursorVisible ? "opacity-100" : "opacity-0"}`}>
+        |
+      </span>
     </h1>
   );
 };
