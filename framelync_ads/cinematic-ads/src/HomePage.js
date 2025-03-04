@@ -3,17 +3,23 @@ import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TypingEffect from "./components/TypingEffect";
+import AnimatedButton from "./components/AnimatedButton";
 
 const HomePage = () => {
   const [displayedText, setDisplayedText] = useState("");
   const videoUrl = "COMING SOON";
+
+  // Define consistent button styles
+  const buttonStyle =
+    "bg-white text-black px-6 sm:px-8 py-2.5 sm:py-3 text-base sm:text-lg md:text-xl rounded-full hover:bg-gray-100 transition duration-300 ease-in-out flex items-center justify-center gap-2"; // Adjusted hover effect
+    const buttonArrow = "text-xl"
 
   return (
     <div className="relative z-0 flex flex-col items-center justify-center min-h-screen bg-[#0E1012] text-white px-4 sm:px-8 lg:px-12">
       <Header />
 
       {/* ✅ Flare Background Effect */}
-      <img 
+      <img
         src="/Ellipse 4.png"
         alt="Flare Effect"
         className="absolute top-[8%] sm:top-[5%] left-1/2 transform -translate-x-1/2 w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] opacity-80 pointer-events-none z-[-10]"
@@ -29,7 +35,7 @@ const HomePage = () => {
       {/* ✅ Video Section */}
       <div className="mt-6 sm:mt-8 w-full max-w-6xl aspect-video bg-gray-700 rounded-lg flex items-center justify-center overflow-hidden">
         <video
-          src={videoUrl}
+          src="/Framelync_Intro_2.mp4"
           controls
           className="w-full h-full object-cover"
           autoPlay
@@ -39,40 +45,55 @@ const HomePage = () => {
       </div>
 
       {/* ✅ Buttons */}
-      <div className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-6 sm:gap-8">
+      <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-6 sm:gap-8">
+        {/* Reduced margin-top */}
         <Link to="/our-works">
-          <button className="bg-white text-black px-5 sm:px-7 py-2 sm:py-3 text-base sm:text-lg md:text-xl rounded-full hover:bg-gray-200 transition">
-            Our Works ↗
-          </button>
+        <AnimatedButton>
+          Our Works <span className="text-xl">↗</span>
+        </AnimatedButton>
         </Link>
         <Link to="/loading">
-          <button className="bg-white text-black px-5 sm:px-7 py-2 sm:py-3 text-base sm:text-lg md:text-xl rounded-full hover:bg-gray-200 transition">
-            Book your Slot ↗
-          </button>
+          <AnimatedButton>
+            Book your Slot <span className="text-xl">↗</span>
+          </AnimatedButton>
         </Link>
       </div>
 
       {/* ✅ Simple Steps Section */}
-      <div className="mt-24 sm:mt-32 text-center">
+      <div className="mt-20 sm:mt-24 text-center">
+        {/* Reduced margin-top */}
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white-400">
           We Believe In Keeping Things Simple.
         </h2>
         <div className="mt-8 sm:mt-10 text-gray-300 space-y-3 sm:space-y-4 flex flex-col items-center text-base sm:text-lg md:text-xl">
-          {["Contact Us", "Tell us your requirements.", "We will get in touch.", "Discuss project agreements.", "Get your project delivered.", "Thank us later."].map((text, index) => (
+          {[
+            "Contact Us",
+            "Tell us your requirements",
+            "We will get in touch",
+            "Discuss project agreements",
+            "Get your project delivered",
+            "Thank us later",
+          ].map((text, index) => (
             <React.Fragment key={index}>
               <p>{text}</p>
-              {index < 5 && <div className="w-0.5 h-4 sm:h-6 bg-gray-400"></div>}
+              {index < 5 && (
+                <div className="w-0.5 h-4 sm:h-6 bg-gray-400"></div>
+              )}
             </React.Fragment>
           ))}
         </div>
       </div>
 
       {/* ✅ Contact Section */}
-      <div className="mt-16 sm:mt-20 text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Let's Talk!</h2>
+      <div className="mt-12 sm:mt-16 text-center">
+        {/* Reduced margin-top */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+          Let's Talk!
+        </h2>
         <Link to="/loading">
-          <button className="mt-4 bg-white text-black px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg md:text-xl rounded-full hover:bg-gray-200 transition">
-            Book your Slot ↗
+          <button className={`${buttonStyle} mt-8`}>
+            {/* Added consistent button style here */}
+            Book your Slot <span className={buttonArrow}>↗</span>
           </button>
         </Link>
       </div>
