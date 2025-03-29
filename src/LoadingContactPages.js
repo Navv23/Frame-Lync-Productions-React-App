@@ -25,7 +25,7 @@ const LoadingPage = ({ message, redirectTo }) => {
 
   return (
     <div className="bg-[#0E1012] text-white min-h-screen flex flex-col items-center justify-center">
-      <Header logoVariant="light" />
+      {/* <Header logoVariant="light" /> */}
 
       <main className="flex-grow flex flex-col items-center justify-center w-full max-w-md px-4">
         {/* Smooth Circular Loader */}

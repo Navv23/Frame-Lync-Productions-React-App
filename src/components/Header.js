@@ -57,18 +57,18 @@ const Header = ({ logoVariant = "light" }) => {
     }
   };
 
-    const getMenuIcon = (iconName: string) => {
-        switch (iconName) {
-            case "Home":
-                return <Home className="mr-2 w-4 h-4" />;
-            case "Briefcase":
-                return <Briefcase className="mr-2 w-4 h-4" />;
-            case "Mail":
-                return <Mail className="mr-2 w-4 h-4" />;
-            default:
-                return null;
-        }
-    };
+  const getMenuIcon = (iconName) => {
+    switch (iconName) {
+      case "Home":
+        return <Home className="mr-2 w-4 h-4" />;
+      case "Briefcase":
+        return <Briefcase className="mr-2 w-4 h-4" />;
+      case "Mail":
+        return <Mail className="mr-2 w-4 h-4" />;
+      default:
+        return null;
+    }
+  };
 
   const getMenuItemClass = (path) => {
     const isActive = location.pathname === path;
@@ -86,18 +86,18 @@ const Header = ({ logoVariant = "light" }) => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
+    <header className="fixed top-0 left-0 w-full z-50 h-20">
       {isScrolled && (
         <div className="absolute top-0 left-0 w-full pointer-events-none bg-gradient-to-b from-black/70 to-transparent h-28 transition-opacity duration-300" />
       )}
 
-      <div className={`mx-auto max-w-7xl ${containerPaddingX}`}>
-        <div className="relative flex items-center justify-between h-20">
+      <div className={`mx-auto max-w-7xl ${containerPaddingX} h-full`}>
+        <div className="flex items-center justify-between h-full">
           <Link
             to="/"
             className={`flex items-center justify-center z-10 ${logoMarginLeft}`}
           >
-            <div className="flex items-center justify-center h-20">
+            <div className="flex items-center justify-center h-full">
               <img
                 src={logoVariant === "dark" ? "/logo-file-03-dark.png" : "/logo-file-04.png"}
                 alt="FrameLync Ads"
@@ -113,18 +113,18 @@ const Header = ({ logoVariant = "light" }) => {
               className={`
                 flex items-center text-base sm:text-lg font-medium px-4 py-2 rounded-full transition-all duration-200
                 ${isMenuOpen
-                  ? "bg-gray-100 text-gray-900 shadow-md"
+                  ? "bg-gray-100 shadow-md"
                   : `${logoVariant === "dark"
-                      ? "text-gray-900 hover:bg-gray-100/70"
-                      : "text-white hover:bg-white/20"
+                      ? "bg-transparent hover:bg-gray-100/70"
+                      : "bg-transparent hover:bg-white/20"
                     } active:bg-white/30`
                 }
               `}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <span className="mr-2 font-medium">Menu</span>
+              <span className={`mr-2 font-medium ${logoVariant === "dark" ? "text-gray-900" : "text-white"}`}>Menu</span>
               <svg
-                className={`w-4 h-4 transition-transform duration-200 ${isMenuOpen ? "rotate-180" : ""}`}
+                className={`w-4 h-4 transition-transform duration-200 ${isMenuOpen ? "rotate-180" : ""} ${logoVariant === "dark" ? "text-gray-900" : "text-white"}`}
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
