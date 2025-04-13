@@ -9,7 +9,7 @@ const services = [
     icon: "🎬",
     title: "Video Production",
     description: "High-quality video content for brands, ads, and businesses.",
-    features: ["Brand Videos", "Advertisements", "Corporate Films", "Product Demos"],
+    features: ["Brand Videos", "Advertisements", "Corporate Films", "Product Demos", "Video Editing"],
     link: "/loading",
     color: "#FF5757"
   },
@@ -18,7 +18,7 @@ const services = [
     icon: "📸",
     title: "Photography Shoots",
     description: "Professional photoshoots for corporate, brands, and events.",
-    features: ["Corporate Portraits", "Product Photography", "Event Coverage", "Brand Campaigns"],
+    features: ["Corporate Portraits", "Product Photography", "Event Coverage", "Brand Campaigns", "Photo Editing"],
     link: "/loading",
     color: "#5E72EB"
   }

@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TypingEffect from "./components/TypingEffect";
 import ServicesSection from "./components/ServicesSection";
+import OurPartnersSection from "./components/OurPartnersSection"; // Import the OurPartnersSection component
+//import { cn } from "@/lib/utils"; // Removed this import
 
 const HomePage = () => {
   const [displayedText] = useState("");
@@ -33,7 +35,7 @@ const HomePage = () => {
           src="/Ellipse 4.png"
           alt="Flare Effect"
           className="absolute top-[-20px] sm:top-0 md:top-[-50px] left-1/2 transform -translate-x-1/2 w-full sm:w-[80%] md:w-[60%] lg:w-[45%] xl:w-[40%] opacity-80 pointer-events-none z-[-10]"
-          />
+        />
 
         {/* Main Content - improved spacing */}
         <h1 className="mt-6 sm:mt-10 md:mt-16 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center leading-tight">
@@ -44,21 +46,21 @@ const HomePage = () => {
 
         {/* Video Section - improved responsive dimensions with laptop optimization */}
         <div className="mt-2 sm:mt-4 md:mt-6 lg:mt-8 w-full max-w-6xl flex items-center justify-center overflow-hidden px-2 sm:px-4 md:px-6 lg:px-8">
-        <div className="w-full rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-lg shadow-black/30">
-          <video
-            src="/Framelync_Intro_2.mp4"
-            controls
-            className="w-full h-auto object-cover 
-              max-h-[35vh] sm:max-h-[45vh] 
-              md:max-h-[60vh] lg:max-h-[75vh] xl:max-h-[85vh]"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          />
+          <div className="w-full rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-lg shadow-black/30">
+            <video
+              src="/BTS.mp4"
+              controls
+              className="w-full h-auto object-cover 
+                 max-h-[35vh] sm:max-h-[45vh] 
+                 md:max-h-[60vh] lg:max-h-[75vh] xl:max-h-[85vh]"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            />
+          </div>
         </div>
-      </div>
         {/* Buttons - better spacing and sizing for small screens */}
         <div className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
           <Link to="/our-works">
@@ -76,6 +78,11 @@ const HomePage = () => {
         {/* Services Section - added container padding for small screens */}
         <div className="mt-8 sm:mt-12 md:mt-16 w-full px-1 sm:px-0">
           <ServicesSection />
+        </div>
+
+        {/* Our Partners Section */}
+        <div className="mt-8 sm:mt-12 md:mt-16 w-full">
+          <OurPartnersSection /> 
         </div>
 
         {/* "We Believe In Keeping Things Simple" Section - improved spacing */}
