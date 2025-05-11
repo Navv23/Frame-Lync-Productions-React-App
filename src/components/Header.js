@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
-import { Home, Briefcase, Mail } from 'lucide-react'; // Import icons
+import { Home, Briefcase, Mail, Users } from 'lucide-react'; // Import icons, including Users
 
 const Button = ({ variant, size, className, onClick, children }) => (
   <button
@@ -65,6 +65,8 @@ const Header = ({ logoVariant = "light" }) => {
         return <Briefcase className="mr-2 w-4 h-4" />;
       case "Mail":
         return <Mail className="mr-2 w-4 h-4" />;
+      case "Users": // Added case for Users icon
+        return <Users className="mr-2 w-4 h-4" />;
       default:
         return null;
     }
@@ -82,6 +84,7 @@ const Header = ({ logoVariant = "light" }) => {
   const menuItems = [
     { path: "/", label: "Home", icon: "Home" },
     { path: "/our-works", label: "Our Works", icon: "Briefcase" },
+    { path: "/our-team", label: "Our Team", icon: "Users" }, // Added Our Team
     { path: "/contact-us", label: "Contact Us", icon: "Mail" },
   ];
 

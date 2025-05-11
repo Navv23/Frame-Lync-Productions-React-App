@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 // Simple utility function for combining class names
-const cn = (...classes: string[]) => classes.filter(Boolean).join(' ');
+const cn = (...classes) => classes.filter(Boolean).join(' ');
 
 // Sample partner data (replace with your actual data)
 const partners = [
     { name: 'Partner 1', logo: '/cakes_joint.png', link: '#' },
     { name: 'Partner 2', logo: '/dhatri-fin-logo-bw.png', link: '#' },
-    // Removed Partner 3, Partner 4, Partner 5, Partner 6, Partner 7, Partner 8
+    { name: 'Partner 3', logo: '/Sadvidya_School.png', link: '#' },
+    // Removed Partner 3, Partner 4, Partner 5, Partner 6, Partner 7, Partner 8 for single line
 ];
 
-const OurPartnersSection = () => {
+const OurPartnersSection = ({ logoSize = 'h-24 sm:h-28 md:h-32' }) => { // Added logoSize prop with default value
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -65,40 +66,41 @@ const OurPartnersSection = () => {
                     initial="hidden"
                     animate="visible"
                     className={cn(
-                        "grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12", // Increased gap
-                        "justify-items-center",
-                        "w-full"
+                        "flex",
+                        isMobile ? "flex-col items-center" : "flex-row items-center justify-around", // Use flexbox for single line on larger screens
+                        "w-full",
+                        isMobile ? "space-y-8" : "space-x-8 sm:space-x-12 md:space-x-16" // Adjust spacing
                     )}
                 >
-                    {partners.map((partner, index) => (
-                        <motion.div
-                            key={index}
-                            variants={itemVariants}
-                            whileHover="hover"
-                            className={cn(
-                                "flex items-center justify-center",
-                                "w-full", // Ensure each item takes full width of its grid cell
-                            )}
+                    {partners.map((partner, index) => {
+                        let logoClass = logoSize;
+                        if (partner.name === 'Partner 2') { // Target 'Partner 2' specifically
+                            logoClass = 'h-12 sm:h-16 md:h-20'; // Make it smaller
+                        }
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={itemVariants}
+                                whileHover="hover"
+                                className={cn(
+                                    "flex items-center justify-center",
+                                    "w-auto",
+                                )}
 
-                        >
-                            <a
-                                href={partner.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full h-full flex items-center justify-center"
                             >
                                 <img
                                     src={partner.logo}
                                     alt={partner.name}
                                     className={cn(
-                                        "h-24 sm:h-28 md:h-32 object-contain", // Increased logo size
-                                        "grayscale hover:grayscale-0 transition-all duration-500", // Added smoother transition
-                                        "w-auto max-w-full", // Ensure image doesn't overflow
+                                        logoClass,
+                                        "object-contain",
+                                        "grayscale hover:grayscale-0 transition-all duration-500",
+                                        "w-auto max-w-full",
                                     )}
                                 />
-                            </a>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        )
+                    })}
                 </motion.div>
             </div>
         </section>

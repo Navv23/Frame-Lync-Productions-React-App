@@ -4,6 +4,7 @@ import { LoadingPage, ContactUs } from "./LoadingContactPages";
 import OurWorks from "./OurWorks";
 import PrivacyPolicy from "./PrivacyPolicy";
 import TermsOfService from "./TermsOfService";
+import OurTeamPage from './OurTeamPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/our-team" element={<OurTeamPage />} /> 
       </Routes>
     </Router>
   );
